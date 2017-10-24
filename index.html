@@ -195,6 +195,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", settings.graphApiUrl + "/api/nsk/v1/token", false);
       xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.setRequestHeader("Ocp-Apim-Subscription-Key", "33e1b3944e82408f9bca3d6173fd093a");
       xhttp.send();
       var response = JSON.parse(xhttp.responseText);
       settings.token = response.data.token;
@@ -299,6 +300,7 @@
           'Accept': 'application/json',
           'Content-Type': 'application/json',
           'Authorization': settings.token,
+          'Ocp-Apim-Subscription-Key': '33e1b3944e82408f9bca3d6173fd093a'
         },
         body: JSON.stringify(graphQLParams),
         credentials: 'omit',
